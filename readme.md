@@ -8,6 +8,14 @@
 
 slsdz is a command-line interface (CLI) tool and serverless FAAS for creating serverless applications with random subdomains. It simplifies the process of setting up serverless functions using AWS services.
 
+
+
+
+https://github.com/apotox/slsdz/assets/8216066/e31a44fd-6d52-40c0-9145-3891348b2b78
+
+
+
+
 ## Installation
 
 You can use slsdz using npx:
