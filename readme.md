@@ -12,13 +12,14 @@ https://github.com/apotox/slsdz/assets/8216066/e31a44fd-6d52-40c0-9145-3891348b2
 
 ## Installation
 
-You can use slsdz using npx:
+You can try the cli:
 
 ```bash
 yarn install
 yarn bundle
 cd demo
 ./mycli.js --help
+# Note: mycli.js is a shortlink to the bundled CLI file cli.js
 ```
 
 # Options
