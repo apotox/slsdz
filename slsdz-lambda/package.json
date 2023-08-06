@@ -1,0 +1,33 @@
+{
+  "name": "slsdz-lambda",
+  "main": "../dist/bundle.js",
+  "author": {
+    "name": "safi eddine bouhentala <safidev@protom.me>"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.115",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/joi": "^17.2.3",
+    "@types/node": "^20.1.1",
+    "aws-sdk": "^2.1374.0",
+    "esbuild": "^0.17.18",
+    "typescript": "^5.0.4",
+    "vitest": "^0.32.0"
+  },
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "bundle": "yarn bundle-sls-proxy && yarn bundle-deployer && yarn bundle-signer && yarn bundle-logger && yarn bundle-cname",
+    "bundle-deployer": "yarn esbuild --tsconfig=tsconfig.json --bundle --platform=node src/deployer/index.ts --outfile=../dist/deployer/bundle.js",
+    "bundle-sls-proxy": "yarn esbuild --tsconfig=tsconfig.json --bundle --platform=node src/sls_proxy/index.ts --outfile=../dist/sls_proxy/bundle.js",
+    "bundle-signer": "yarn esbuild --tsconfig=tsconfig.json --bundle --platform=node src/signer/index.ts --outfile=../dist/signer/bundle.js",
+    "bundle-logger": "yarn esbuild --tsconfig=tsconfig.json --bundle --platform=node src/logger/index.ts --outfile=../dist/logger/bundle.js",
+    "bundle-cname": "yarn esbuild --tsconfig=tsconfig.json --bundle --platform=node src/cname/index.ts --outfile=../dist/cname/bundle.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "joi": "^17.9.2"
+  },
+  "license": "MIT"
+}

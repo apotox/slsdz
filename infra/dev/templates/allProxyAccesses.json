@@ -1,0 +1,76 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CreateCloudWatchLogs",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowS3Access",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": "${functionsBucketArn}"
+        },
+        {
+            "Sid": "AllowLambdaInvoke",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": "${targetFunctionsArn}"
+        },
+        {
+            "Sid": "AllowIAMPassRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:PassRole"
+            ],
+            "Resource": "${userLambdaRoleArn}"
+        },
+        {
+            "Sid": "AllowApiGatewayAccess",
+            "Effect": "Allow",
+            "Action": [
+                "apigatewayv2:*",
+                "apigateway:*"
+            ],
+            "Resource": [
+                "${apiGatewayArn}",
+                "${apiGatewayArnStar}"
+            ]
+        },
+        {
+            "Sid": "AllowApiGatewayFullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "apigateway:*"
+            ],
+            "Resource": "arn:aws:apigateway:us-east-1::/*"
+        },
+        {
+            "Sid": "AllowLambdaAccess",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowCloudFormationCreateStack",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

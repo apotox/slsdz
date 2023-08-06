@@ -1,0 +1,17 @@
+{
+  "name": "slslambda",
+  "author": {
+    "name": "safi eddine bouhentala.",
+    "email": "safidev@proton.me"
+  },
+  "private": true,
+  "scripts": {
+    "bundle": "yarn workspaces run bundle",
+    "lint": "yarn run eslint .",
+    "test": "yarn workspaces run test"
+  },
+  "workspaces": [
+    "slsdz-cli",
+    "slsdz-lambda"
+  ]
+}

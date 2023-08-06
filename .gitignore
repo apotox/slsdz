@@ -1,0 +1,9 @@
+node_modules
+.terraform*
+terraform*
+dist
+release
+cli.js
+.slsdz
+local-dev/*.zip
+test/index.js

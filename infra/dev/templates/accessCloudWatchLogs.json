@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CreateCloudWatchLogs2",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:DescribeLogGroups",
+                "cloudwatch:DescribeLogStreams",
+                "cloudwatch:GetLogEvents",
+                "logs:DescribeLogStreams",
+                "logs:ListTagsLogGroup",
+                "logs:GetLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
